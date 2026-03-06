@@ -13,6 +13,7 @@ import { FoodSection } from "@/components/food-section"
 import { CommitteeSection } from "@/components/committee-section"
 import { SponsorsSection } from "@/components/sponsors-section"
 import { PastEventsSection } from "@/components/past-events-section"
+import { GallerySection } from "@/components/gallery-section"
 import { FAQSection } from "@/components/faq-section"
 import { Footer } from "@/components/footer"
 
@@ -84,6 +85,12 @@ export default function Home() {
         </div>
 
         <PastEventsSection />
+
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="h-px bg-border/30" />
+        </div>
+
+        <GallerySection />
 
         <div className="mx-auto max-w-5xl px-6">
           <div className="h-px bg-border/30" />
