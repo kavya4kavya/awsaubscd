@@ -11,7 +11,7 @@ const speakers = [
     company: "",
     session: "Cloud Security",
     bio: "Experienced cloud security practitioner and AWS Authorized Instructor focusing on secure cloud architecture and IAM best practices.",
-    image: "/sonal.png",
+    image: "/speakers/sonal.png",
     linkedin: "#",
   },
   {
@@ -20,7 +20,7 @@ const speakers = [
     company: "",
     session: "GenAI",
     bio: "Community builder and instructor working across GenAI, ML and data science training programs.",
-    image: "/shefali.png",
+    image: "/speakers/shefali.png",
     linkedin: "#",
   },
   {
@@ -29,7 +29,7 @@ const speakers = [
     company: "",
     session: "Coming Soon",
     bio: "Details coming soon.",
-    image: "/aii.png",
+    image: "/speakers/placeholder.jpg",
     linkedin: "#",
   },
   {
@@ -38,7 +38,7 @@ const speakers = [
     company: "",
     session: "Coming Soon",
     bio: "Details coming soon.",
-    image: "/aii.png",
+    image: "/speakers/placeholder.jpg",
     linkedin: "#",
   },
 ]
@@ -69,14 +69,9 @@ function SpeakerModal({
         </button>
         <div className="flex items-center gap-4">
           <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-full bg-secondary">
-            <img
-              src={speaker.image}
-              alt={speaker.name}
-              className="h-full w-full object-cover"
-              onError={(e) => {
-                ;(e.target as HTMLImageElement).src = "/aii.png"
-              }}
-            />
+            <div className="flex h-full w-full items-center justify-center text-2xl font-bold text-primary">
+              {speaker.name.split(" ").map((n) => n[0]).join("")}
+            </div>
           </div>
           <div>
             <h3 id="speaker-name" className="font-display text-xl font-bold text-foreground">
@@ -138,14 +133,9 @@ export function SpeakersSection() {
             >
               <div className="flex items-center gap-4">
                 <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-full bg-secondary transition-all group-hover:ring-2 group-hover:ring-primary/50">
-                  <img
-                    src={speaker.image}
-                    alt={speaker.name}
-                    className="h-full w-full object-cover"
-                    onError={(e) => {
-                      ;(e.target as HTMLImageElement).src = "/aii.png"
-                    }}
-                  />
+                  <div className="flex h-full w-full items-center justify-center text-lg font-bold text-primary">
+                    {speaker.name.split(" ").map((n) => n[0]).join("")}
+                  </div>
                 </div>
                 <div className="min-w-0">
                   <h3 className="font-display font-semibold text-foreground truncate">

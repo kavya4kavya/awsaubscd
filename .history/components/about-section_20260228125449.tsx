@@ -3,7 +3,7 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { Code2, Mic2, Layers, Gift } from "lucide-react"
 import { useEffect, useState, useRef } from "react"
-    
+
 const features = [
   {
     icon: Code2,
@@ -18,7 +18,7 @@ const features = [
   {
     icon: Layers,
     title: "Multi-Track Sessions",
-    description: "Choose your own path across 3 parallel technical tracks.",
+    description: "Choose your own path across 5 parallel technical tracks.",
   },
   {
     icon: Gift,
@@ -29,8 +29,8 @@ const features = [
 
 const stats = [
   { value: 300, suffix: "+", label: "Attendees" },
-  { value: 4, suffix: "", label: "Speakers" },
-  { value: 3, suffix: "", label: "Technical Tracks" },
+  { value: 10, suffix: "+", label: "Speakers" },
+  { value: 5, suffix: "", label: "Technical Tracks" },
   { value: 1, suffix: "", label: "Power-Packed Day" },
 ]
 

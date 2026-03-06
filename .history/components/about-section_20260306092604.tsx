@@ -3,7 +3,7 @@
 import { useScrollAnimation } from "@/hooks/use-scroll-animation"
 import { Code2, Mic2, Layers, Gift } from "lucide-react"
 import { useEffect, useState, useRef } from "react"
-    
+
 const features = [
   {
     icon: Code2,

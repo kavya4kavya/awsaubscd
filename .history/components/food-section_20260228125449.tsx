@@ -20,7 +20,7 @@ const experiences = [
     icon: Gift,
     title: "Swag Kit",
     description: "Exclusive AWS Community merch, stickers, and goodies.",
-    time: "4:30 PM",
+    time: "On Arrival",
   },
 ]
 
