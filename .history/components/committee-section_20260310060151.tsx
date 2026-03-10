@@ -69,7 +69,7 @@ const committeeLevels = [
       { name: "Rajath Sai S", role: "Member", linkedin: "https://www.linkedin.com/in/rajath-sai-s-3560a52b5", image: "/rajat_sai.png" },
       { name: "Neelambika Bargonda", role: "Member", linkedin: "https://www.linkedin.com/in/neelambika-bargonda-78542632a", image: "/neelambika.png" },
       { name: "Husaif", role: "Member", linkedin: "https://www.linkedin.com/in/mohammed-moin-0475873b2", image: "/husaif.png" },
-      { name: "Jhanavi Krishnan", role: "Member", linkedin: "https://www.linkedin.com/in/jahnavi-krishnan-60a3a0343/", image: "/jahnavi.png" },
+      { name: "Jhanavi Krishnan", role: "Member", linkedin: "#", image: "/jhanavi.png" },
       {name: "Muskan Kumari", role: "Member", linkedin: "www.linkedin.com/in/muskan-kumari-327739349", image: "/muskan.png" }]
   },
 ]
