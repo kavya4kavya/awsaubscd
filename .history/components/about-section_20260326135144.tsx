@@ -28,7 +28,7 @@ const features = [
 ]
 
 const stats = [
-  { value: 550, suffix: "+", label: "Attendees" },
+  { value: 450, suffix: "+", label: "Attendees" },
   { value: 6, suffix: "+", label: "Speakers" },
   { value: 450, suffix: "", label: "Swag Slots" },
   { value: 1, suffix: "", label: "Power-Packed Day" },

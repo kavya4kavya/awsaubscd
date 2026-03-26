@@ -68,10 +68,9 @@ const committeeLevels = [
       { name: "Syed Amaan Tabraiz", role: "Member", linkedin: "https://www.linkedin.com/in/syed-amaan-tabraiz-a23745295", image: "/amaan.png" },
       { name: "Rajath Sai S", role: "Member", linkedin: "https://www.linkedin.com/in/rajath-sai-s-3560a52b5", image: "/rajat_sai.png" },
       { name: "V Sneha", role: "Member", linkedin: "https://www.linkedin.com/in/v-sneha-468a81350/", image: "/sneha.png" },
-      { name: "Jhanavi Krishnan", role: "Member", linkedin: "https://www.linkedin.com/in/jahnavi-krishnan-60a3a0343/", image: "/jahnavi.png" },
-      {name: "Muskan Kumari", role: "Member", linkedin: "www.linkedin.com/in/muskan-kumari-327739349", image: "/muskan.png" },
       {name : "Pranay Ashok Bhalerao", role: "Member", linkedin: "https://www.linkedin.com/in/pranay-bhalerao-013661280/", image: "/pranay.png" },
-      ]
+      { name: "Jhanavi Krishnan", role: "Member", linkedin: "https://www.linkedin.com/in/jahnavi-krishnan-60a3a0343/", image: "/jahnavi.png" },
+      {name: "Muskan Kumari", role: "Member", linkedin: "www.linkedin.com/in/muskan-kumari-327739349", image: "/muskan.png" }]
   },
 ]
 
