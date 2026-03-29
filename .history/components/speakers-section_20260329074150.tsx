@@ -18,7 +18,7 @@ const speakers = [
     role: "Analytics & AI Specialist Solutions Architect",
     company: "Amazon Web Services",
     bio: "Shubham Purwar is an Analytics & AI Specialist Solutions Architect at AWS with an MTech in AI & ML from BITS Pilani, empowering Startup and ISV organizations to unlock the full potential of their data through scalable, secure, and high-performance cloud solutions. He brings deep expertise across the complete AWS analytics stack- including Amazon MSK, OpenSearch, Redshift, Glue, Athena, EMR, and SageMaker and is passionate about driving analytics and AI innovation for India's fastest-growing technology companies, having presented at AWS re:Invent 2025 in Las Vegas.",
-    image: "/shubham.png",
+    image: "/speaker_place.png",
     linkedin: "#",
   },
   {
