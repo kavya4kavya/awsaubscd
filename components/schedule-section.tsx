@@ -45,7 +45,7 @@ const schedule = [
     speaker: "",
     type: "Session" as SessionType,
     track: "General",
-    description: "Dr. Sali/ Dr.Monit Kapoor",
+    description: "",
   },
   {
     time: "10:30 – 11:00",
