@@ -18,7 +18,7 @@ const speakers = [
     role: "Director, Cloud Acceleration, Asia Pacific & Japan",
     company: "Amazon Web Services",
     bio: "Adrian leads a regional team of specialist Solution Architects and Software Engineers who help customers and partners accelerate cloud adoption through Prototyping, Developer Transformation, Migration, Modernisation and Security. His team works with emerging technologies such as Artificial Intelligence, Machine Learning, Robotics, Internet of Things and Spatial computing, adapting them across industries. They develop the latest practices for cloud Migration and Application Modernization to increase business agility, and they advise Governments and Customers on strategies to improve security, risk and compliance in the cloud. Adrian also works closely in the sport of Formula 1 and is a technical advisor to Scuderia Ferrari. Having worked in Asia Pacific and North America markets, Adrian's extensive international experience sees him advise and work with a wide range of organizations including startups, independent software vendors, consulting companies, and enterprises. He is a popular public speaker, regularly conducting keynotes at industry events, and writes and hosts two popular online video shows including AWS This is my Architecture and Back to Basics. He also works closely with the motorsports segment as the AWS ambassador for their Formula 1 and Scuderia Ferrari partnerships. Adrian brings 25 years of experience in information technology to AWS. Prior roles include Global Director for Partner Strategic Development in Seattle, Head of Partner Solution Architecture in Asia Pacific at AWS, Chief Technology Officer in Asia Pacific at Hitachi, Co-founder of AirActive, and Technical Advisor at Zetaris. He has worked actively with industry bodies such as the Storage Networking Industry Association (SNIA), and advised the Australian Government on cloud policy. Adrian has also published multiple technical whitepapers and books.",
-    image: "/adrian.png",
+    image: "/speaker_place.png",
     linkedin: "#",
   },
   {
@@ -46,6 +46,11 @@ const speakers = [
     linkedin: "#",
   },
 ]
+
+function getMiniBio(bio: string, maxLength = 130) {
+  if (bio.length <= maxLength) return bio
+  return `${bio.slice(0, maxLength).trimEnd()}...`
+}
 
 function SpeakerModal({ speaker, onClose }: { speaker: (typeof speakers)[0]; onClose: () => void }) {
   return (
@@ -112,30 +117,34 @@ export function SpeakersSection() {
               key={`speaker-${i}`}
               onClick={() => setSelectedSpeaker(speaker)}
               aria-label={`Open speaker profile: ${speaker.name}`}
-              className={`glass group rounded-2xl p-6 transition-all duration-500 hover:-translate-y-1 hover:glow-sm`}
+              className="group relative h-72 overflow-hidden rounded-2xl border border-primary/10 text-left transition-transform duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
               style={{ animationDelay: `${i * 80 + 120}ms` }}
             >
-              <div className="flex flex-col items-center text-center">
-                  <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-full bg-secondary transition-all group-hover:ring-2 group-hover:ring-primary/50">
-                    <img
-                      src={speaker.image}
-                      alt={speaker.name}
-                      className="h-full w-full object-cover"
-                      onError={(e) => {
-                        ;(e.target as HTMLImageElement).src = "/speaker_place.png"
-                      }}
-                    />
-                  </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-700" aria-hidden="true" />
 
-                <h3 className="mt-4 font-display font-semibold text-foreground">
-                  <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary">{speaker.name}</span>
-                </h3>
-                {speaker.role && <p className="text-sm text-primary mt-1">{speaker.role}</p>}
-                {speaker.company && <p className="text-xs text-muted-foreground">{speaker.company}</p>}
+              <div className="absolute inset-0 flex flex-col justify-end p-5 text-white">
+                <p className="text-lg font-bold opacity-0 translate-y-2 transition-all duration-[400ms] delay-100 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0">
+                  {speaker.name}
+                </p>
+                <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-white/90 opacity-0 translate-y-2 transition-all duration-[400ms] delay-150 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100 group-hover:translate-y-0 group-focus-visible:opacity-100 group-focus-visible:translate-y-0">
+                  {getMiniBio(speaker.bio)}
+                </p>
+              </div>
 
-                <div className="mt-3 flex items-center gap-2 justify-center">
-                  <span className="text-xs text-muted-foreground group-hover:text-primary transition-colors">View Profile</span>
+              <div className="glass absolute inset-0 z-10 flex flex-col items-center justify-center rounded-2xl p-6 text-center transition-transform duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-x-16 group-hover:scale-[0.8] group-focus-visible:-translate-x-16 group-focus-visible:scale-[0.8]">
+                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-full bg-secondary transition-all duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:ring-2 group-hover:ring-white/60 group-focus-visible:ring-2 group-focus-visible:ring-white/60">
+                  <img
+                    src={speaker.image}
+                    alt={speaker.name}
+                    className="h-full w-full object-cover"
+                    onError={(e) => {
+                      ;(e.target as HTMLImageElement).src = "/speaker_place.png"
+                    }}
+                  />
                 </div>
+
+                {speaker.role && <p className="mt-4 text-sm font-medium text-primary">{speaker.role}</p>}
+                {speaker.company && <p className="text-xs text-muted-foreground">{speaker.company}</p>}
               </div>
             </button>
           ))}

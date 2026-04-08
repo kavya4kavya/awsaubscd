@@ -185,11 +185,9 @@ export function ScheduleSection() {
                   {item.speaker && (
                     <p className="mt-1 text-sm text-primary">{item.speaker}</p>
                   )}
-                  {item.description && (
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      {item.description}
-                    </p>
-                  )}
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {item.description}
+                  </p>
                 </div>
               </div>
             ))}
