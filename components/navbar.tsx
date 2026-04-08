@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
+import { Home, Menu, X } from "lucide-react"
 
 const orgLogos = [
   {
@@ -43,6 +43,15 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-500 py-4 shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
         <div className="flex items-center gap-4 sm:gap-8">
+          <button
+            type="button"
+            aria-label="Go to top"
+            title="Home"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:text-primary sm:h-10 sm:w-10"
+          >
+            <Home size={16} />
+          </button>
           {orgLogos.map((logo) => (
             logo.href ? (
               <a

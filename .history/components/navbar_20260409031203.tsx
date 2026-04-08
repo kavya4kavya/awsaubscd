@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
+import { Home, Menu, X } from "lucide-react"
 
 const orgLogos = [
   {
@@ -11,16 +11,18 @@ const orgLogos = [
   {
     name: "AWS Cloud Club",
     src: "/cloudClub.png",
+    href: "https://www.linkedin.com/in/awscc-aub/",
   },
   {
     name: "Amity University Bengaluru",
     src: "/aub_blue.png",
+    href: "https://www.amity.edu/bengaluru/",
   },
 ]
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Tracks", href: "#tracks" },
+  { label: "Swags", href: "#swag" },
   { label: "Speakers", href: "#speakers" },
   { label: "Schedule", href: "#schedule" },
   { label: "Venue", href: "#venue" },
@@ -38,24 +40,43 @@ export function Navbar() {
   }, [])
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "glass-strong py-3"
-          : "bg-transparent py-5"
-      }`}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-500 py-4 shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
-        <a href="#" className="hidden flex-1 items-center gap-6 sm:flex">
+        <div className="flex items-center gap-4 sm:gap-8">
+          <button
+            type="button"
+            aria-label="Go to top"
+            title="Home"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:text-primary sm:h-10 sm:w-10"
+          >
+            <Home size={16} />
+          </button>
           {orgLogos.map((logo) => (
-            <img
-              key={logo.name}
-              src={logo.src}
-              alt={logo.name}
-              className="h-12 w-auto object-contain opacity-95"
-            />
+            logo.href ? (
+              <a
+                key={logo.name}
+                href={logo.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={logo.name}
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.name}
+                  className="h-8 sm:h-12 w-auto object-contain opacity-95"
+                />
+              </a>
+            ) : (
+              <img
+                key={logo.name}
+                src={logo.src}
+                alt={logo.name}
+                className="h-8 sm:h-12 w-auto object-contain opacity-95"
+              />
+            )
           ))}
-        </a>
+        </div>
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-8 md:flex">
@@ -63,7 +84,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="text-sm text-muted-foreground transition-colors hover:text-primary"
             >
               {link.label}
             </a>
@@ -75,7 +96,7 @@ export function Navbar() {
             href="https://docs.google.com/forms/d/1tHOJsmJiqKycMuYcwHIrzXSU1uvBTPT1GAb3qEKdDLY/viewform?edit_requested=true"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition-all hover:shadow-[0_0_20px_hsl(24_100%_50%/0.28)]"
+            className="inline-flex items-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition-all hover:shadow-[0_0_20px_hsl(268_68%_55%/0.28)]"
           >
             Register Now
           </a>
@@ -99,7 +120,7 @@ export function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="text-sm text-muted-foreground transition-colors hover:text-primary"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
